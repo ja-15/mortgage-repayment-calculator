@@ -2,20 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+/* Hide the spinner controls in number input fields */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+input[type="radio"]:checked {
+  background-color: white;
+  border-color: hsl(61, 70%, 52%);
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: hsl(61, 70%, 52%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

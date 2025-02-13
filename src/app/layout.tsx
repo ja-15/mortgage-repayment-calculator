@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const jakarta = localFont({
+  src: [
+    {
+      path: "../assets/fonts/PlusJakartaSans-Bold.ttf",
+      style: "bold",
+    },
+    {
+      path: "../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf",
+      style: "italic",
+    },
+    {
+      path: "../assets/fonts/PlusJakartaSans-Medium.ttf",
+      style: "medium",
+    },
+    {
+      path: "../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf",
+      style: "medium",
+    },
+  ],
+  variable: "--font-jakarta",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${jakarta.className} md:bg-sky-100`}
       >
+        <div className="w-full h-[100vh] flex items-center justify-center">
         {children}
+        </div>
       </body>
     </html>
   );
