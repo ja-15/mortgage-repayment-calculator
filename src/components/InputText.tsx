@@ -15,7 +15,7 @@ type Props = {
 const InputText = ({...props}: Props) => {
   return (
     <div className="relative overflow-hidden mt-2 group">
-        <div className={`${props.classes} absolute ${props.position} bg-sky-100 ml-[1px]`}>
+        <div className={`${props.classes} absolute ${props.position} ml-[1px] group-focus-within:bg-Lime`}>
           {props.icon}
         </div>
           <input 
@@ -24,7 +24,7 @@ const InputText = ({...props}: Props) => {
             name={props.name}
             value={props.value}
             onChange={props.onChange}
-            className={`${props.inputClassName} py-1.5 rounded-md w-full font-medium border-slate-500 border text-left focus:border-Lime focus:outline-Lime focus:outline-1`}
+            className={`${props.inputClassName} py-1.5 rounded-md w-full font-medium border text-left focus:border-Lime focus:outline-Lime focus:outline-1`}
           />
         </div>
   )

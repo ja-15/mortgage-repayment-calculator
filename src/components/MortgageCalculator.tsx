@@ -120,7 +120,7 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({setRepayment, se
   }  
   return (
 <div className='pt-2'>
-    <div className="md:flex md:justify-between pb-6 pt-20 md:pt-0">
+    <div className="md:flex md:justify-between pb-6 pt-10 md:pt-0">
       <h3 className="font-jakarta font-semibold text-xl ">Mortgage Calculator</h3>
       <button onClick={handleReset} className="text-sm hover:underline pt-2 md:pt-0">Clear all</button>
     </div>
@@ -134,8 +134,8 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({setRepayment, se
             value={formData.amount}
             onChange={handleChange}
             position="top-[1px] left-0"
-            classes={`p-2.5 rounded-l-md ${isError.setIsErrAmount ? "bg-red-500 text-white" : ""}`}
-            inputClassName={`pl-12 ${isError.setIsErrAmount ? "border-red-500": ""}`}
+            classes={`p-2.5 rounded-l-md ${isError.setIsErrAmount ? "bg-red-500 text-white" : "bg-sky-100"}`}
+            inputClassName={`pl-12 ${isError.setIsErrAmount ? "border-red-500": "border-slate-500"}`}
             icon={<BsCurrencyPound/>}
           />
           <p className="text-red-500 text-xs">{error.errAmount}</p>
@@ -152,8 +152,8 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({setRepayment, se
               onChange={handleChange}
               position="top-[1px] right-0"
               icon="years"
-              inputClassName={`pl-2 ${isError.setIsErrTerm ? "border-red-500" : ""}`}
-              classes={`p-2 font-jakarta text-sm font-medium mr-[1px] rounded-r-md ${isError.setIsErrTerm ? "bg-red-500 text-white" : ""}`}
+              inputClassName={`pl-2 ${isError.setIsErrTerm ? "border-red-500" : "border-slate-500"}`}
+              classes={`p-2 font-jakarta text-sm font-medium mr-[1px] rounded-r-md border ${isError.setIsErrTerm ? "bg-red-500 text-white" : "bg-sky-100"}`}
           />
           <p className="text-red-500 text-xs">{error.errTerm}</p>
             </div>
@@ -166,8 +166,8 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({setRepayment, se
               value={formData.interestRate}
               onChange={handleChange}
               position="right-[1px] top-[1px]"
-              classes={`p-2.5 rounded-r-md ${isError.setIsErrInterestRate ? "bg-red-500 text-white" : ""}`}
-              inputClassName={`pl-2 ${isError.setIsErrInterestRate ? "border-red-500" : ""}`}
+              classes={`p-2.5 rounded-r-md ${isError.setIsErrInterestRate ? "bg-red-500 text-white" : "bg-sky-100"}`}
+              inputClassName={`pl-2 ${isError.setIsErrInterestRate ? "border-red-500" : "border-slate-500"}`}
               icon={<MdOutlinePercent />}
           />
           <p className="text-red-500 text-xs">{error.errInterestRate}</p>
